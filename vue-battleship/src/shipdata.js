@@ -1,7 +1,7 @@
 module.exports = {
     ship1: {
-        image: "/assets/tie_fighter.png",
-        background: "/assets/tie_fighter_bg.jpg",
+        image: "~assets/tie_fighter.png",
+        background: "/src//assets/tie_fighter_bg.jpg",
         fraction: 'Imperial Army',
         name: 'Tie Fighter',
         price: '9.999,99',
@@ -16,8 +16,8 @@ module.exports = {
     },
 
     ship2: {
-        image: "/assets/death_star.png",
-        background: "/assets/death_star_bg.png",
+        image: "../assets/death_star.png",
+        background: "../assets/death_star_bg.png",
         fraction: 'Imperial Army',
         name: 'Death Star',
         price: '99.999,99',
@@ -32,8 +32,8 @@ module.exports = {
     },
 
     ship3: {
-        image: "/assets/star_destroyer.png",
-        background: "/assets/star_destroyer_bg.jpg",
+        image: "../assets/star_destroyer.png",
+        background: "../assets/star_destroyer_bg.jpg",
         fraction: 'Imperial Army',
         name: 'Star Destroyer',
         price: '25.999,99',

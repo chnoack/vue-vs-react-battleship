@@ -1,11 +1,12 @@
 <template>
   <transition appear mode="in-out" name="shipcard" stagger="250" :duration="1000">
-      <div class="singleship animated" :class="shipkey">
+      <div class="singleship animated" >
           <div class="singleship__header"></div>
 
           <div class="singleship__content" :style="styles">
               <div class="singleship__image">
-                  <img :src="this.ship.image" alt="">
+                <h2>{{this.ship.image}}</h2>
+                 <img :src='img'>
               </div>
 
               <h2 class="singleship__headline">
@@ -58,6 +59,7 @@
 
 <script>
 import VueCircle from 'vue2-circle-progress'
+import img from props.ship.image
 
 export default {
     name: 'single-ship',
@@ -71,6 +73,7 @@ export default {
             'background-image': 'linear-gradient(-180deg, rgba(15, 34, 49, .8) 0%, rgba(16, 28, 44, .8) 50%, rgba(49, 29, 40, .9) 100%), url(' + this.ship.background + ')',
           },
           mark: '🚀',
+          img: img,
           isInFleet: false,
           fill: { gradient:['rgba(203, 48, 66, 1)' , 'rgba(203, 48, 66, .2)']}
       }
