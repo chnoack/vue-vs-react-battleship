@@ -3,7 +3,7 @@
 import Vue from 'vue'
 import App from './App'
 import 'ress/ress.css'
-import './main.scss'
+import '@/assets/main.scss'
 import 'animate.css'
 
 Vue.config.productionTip = false
