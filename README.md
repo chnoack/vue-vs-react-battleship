@@ -1,5 +1,7 @@
 # How to start the battleships
 
+This is a fork of Tonis very nice example to copmare React and Vuejs. I've fixed some dings and dongs espacially in the VueJs example to make it work with the current version of VueJs. I've also added _eslint_.
+
 # vue-battleship
 
 > A Vue.js project based on `vue-cli`'s Webpack template to compare Vue.js and React. Companion repo: https://github.com/tonihauptcc/vue-vs-react-battleship/tree/master/react-battleship
