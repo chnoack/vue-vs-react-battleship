@@ -5,8 +5,7 @@
 
           <div class="singleship__content" :style="styles">
               <div class="singleship__image">
-                <h2>{{this.ship.image}}</h2>
-                 <img :src='img'>
+                 <img :src="image">
               </div>
 
               <h2 class="singleship__headline">
@@ -46,7 +45,6 @@
                   </div>
               </div>
 
-
               <button @click="addToFleet">
                   <span v-if="!isInFleet">Add to fleet</span>
                   <span v-else>Remove from fleet</span>
@@ -59,38 +57,32 @@
 
 <script>
 import VueCircle from 'vue2-circle-progress'
-import img from props.ship.image
+import Vue from 'vue'
 
-export default {
-    name: 'single-ship',
-    components: {
-        VueCircle
-    },
-    props: ['ship'],
-    data() {
-      return {
-          styles: {
-            'background-image': 'linear-gradient(-180deg, rgba(15, 34, 49, .8) 0%, rgba(16, 28, 44, .8) 50%, rgba(49, 29, 40, .9) 100%), url(' + this.ship.background + ')',
-          },
-          mark: '🚀',
-          img: img,
-          isInFleet: false,
-          fill: { gradient:['rgba(203, 48, 66, 1)' , 'rgba(203, 48, 66, .2)']}
-      }
-    },
-    methods: {
-        addToFleet() {
-            this.isInFleet = !this.isInFleet;
-            this.$emit('ADD_TO_FLEET')
+export default Vue.component('single-ship', {
+  components: {
+    VueCircle
+  },
+  props: ['ship'],
+  data() {
+    const backgroundImage = require('@/' + this.ship.background)
+    return {
+        styles: {
+          'background-image': 'linear-gradient(-180deg, rgba(15, 34, 49, .8) 0%, rgba(16, 28, 44, .8) 50%, rgba(49, 29, 40, .9) 100%), url('  + backgroundImage + ')',
         },
-        // progress(event, progress, stepValue) {
-        //     //console.log(stepValue)
-        // },
-        // progress_end(event) {
-        //     //console.log(`Circle progress end ${event}`)
-        // }
+        mark: '🚀',
+        image: require('@/' + this.ship.image),
+        isInFleet: false,
+        fill: { gradient:['rgba(203, 48, 66, 1)' , 'rgba(203, 48, 66, .2)']}
     }
-}
+  },
+  methods: {
+    addToFleet() {
+        this.isInFleet = !this.isInFleet;
+        this.$emit('ADD_TO_FLEET')
+    }
+  }
+})
 </script>
 
 <style lang="scss">
